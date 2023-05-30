@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>GYMSTORE24</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/css/style.css'>
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+    <link rel="stylesheet"
+    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@1,700&family=Roboto+Mono:wght@100;500;600;700&family=Sigmar&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <a href="/html/index.html">
+        <img src="/img/logo1.png">
+      </a>
+    </div>
+
+    <ul class="navbar">
+      <li><a href="/html/index.html" class="active">Home</a></li>
+      <li><a href="/html/clothing_products.html">Product</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="h-icon">
+      <button id="shop">
+        <i class='bx bx-shopping-bag' ></i>
+      </button>
+      <div id="myCart" class="cart">
+        <div class="cart-content">
+          <div class="cart-header">
+            <h2 class=".name">Giỏ Hàng</h2>
+            <span class="close">&times;</span>
+          </div>
+          <div class="listCart">
+
+          </div>
+          <div class="cart-footer">
+            <button type="button" class="btn btn-secondary close-footer">Đóng</button>
+            <button type="button" class="btn btn-primary order">Thanh Toán</button>
+          </div>
+        </div>
+      </div>
+      <a href="/html/login.html"><i class='bx bx-user'></i></a>
+      <div class="bx bx-menu" id="menu-icon"></div>
+    </div>
+    <script type="text/javascript">
+      let menu = document.querySelector('#menu-icon');
+      let navbar = document.querySelector('.navbar');
+
+      menu.onclick = () => {
+        menu.classList.toggle('bx-x');
+        navbar.classList.toggle('active');
+      };
+
+      window.onscroll = () =>{
+        menu.classList.remove('bx-x');
+        navbar.classList.remove('active');
+      }
+    </script>
+                <script type="text/javascript">
+                  // Modal
+                  var cart = document.getElementById("myCart");
+                  var btn = document.getElementById("shop");
+                  var close = document.getElementsByClassName("close")[0];
+                  // tại sao lại có [0] như  thế này bởi vì mỗi close là một html colection nên khi mình muốn lấy giá trị html thì phải thêm [0]. 
+                  // Nếu mình có 2 cái component cùng class thì khi [0] nó sẽ hiển thị component 1 còn [1] thì nó sẽ hiển thị component 2.
+                  var close_footer = document.getElementsByClassName("close-footer")[0];
+                  var order = document.getElementsByClassName("order")[0];
+                  btn.onclick = function () {
+                    cart.style.display = "block";
+                  }
+                  close.onclick = function () {
+                    cart.style.display = "none";
+                  }
+                  close_footer.onclick = function () {
+                    cart.style.display = "none";
+                  }
+                  order.onclick = function () {
+                    alert("Cảm ơn bạn đã thanh toán đơn hàng")
+                  }
+                  window.onclick = function (event) {
+                    if (event.target == cart) {
+                      cart.style.display = "none";
+                    }
+                  }
+                </script>
+      <script type="text/javascript">
+        $('section').each(function(){
+          
+          let top = $(window).scrollTop();
+          let height = $(this).height();
+          let offset = $(this).offset();
+          let id = $(this).attr('id');
+          
+          if(top >= offset && top < offset + height){
+            $('.navbar ul li a ').removeClass('active');
+            $('.navbar').find(`[href="#${id}"]`).addClass('active');
+          }
+        })
+      </script>
+  </header>
+    <!-- <section class="slide">
+        <div class="slide-text">
+          <h5>Hệ thống cửa hàng</h5>
+          <h4>Sàn thương mại dụng cụ hỗ trợ</h4>
+          <h1><span style="color:#f1df11;">GYM</span>STORE<span style="color:#df0004">24</span></h1>
+          <p>Bán dụng cụ hỗ trợ và các thực phẩm chức năng<br>dành cho gym !!</p>
+            <a href="#" class="ctaa"><i class="ri-shopping-cart-fill"></i></i> Mua ngay</a>
+        </div>
+        <div class="slide-img">
+            <img src="/img/gym.png" alt="">
+        </div>
+    </section> -->
+    <div class="about" id="about">
+      <div class="text">
+        <h1>CÁC SẢN PHẨM CỦA CHÚNG TÔI</h1>
+        <p>Sản phẩm của chúng tôi chất lượng 100%<br> đã qua kiểm định</p>
+      </div>
+      <div class="content-about">
+        <ul>
+          <li>
+            <div class="img-about">
+              <a href="/html/clothing_products.html"><img src="/img/avatar_1.png" alt=""></a>
+            </div>
+            <div class="text-img-about">
+              <a href="/html/clothing_products.html">QUẦN ÁO</a>
+            </div>
+          </li>
+
+          <li>
+            <div class="img-about">
+              <a href="/html/tools_products.html"><img src="/img/avatar_2.jpg" alt=""></a>
+            </div>
+            <div class="text-img-about">
+              <a href="/html/tools_products.html">DỤNG CỤ</a>
+            </div>
+          </li>
+
+          <li>
+            <div class="img-about">
+              <a href="/html/gloves_products.html"><img src="/img/avatar_3.jpg" alt=""></a>
+            </div>
+            <div class="text-img-about">
+              <a href="/html/gloves_products.html">GĂNG TAY</a>
+            </div>
+          </li>
+
+          <li>
+            <div class="img-about">
+              <a href="/html/food_supplement_products.html"><img src="/img/avatar_4.png" alt=""></a>
+            </div>
+            <div class="text-img-about">
+              <a href="/html/food_supplement_products.html">THỰC PHẨM BỔ SUNG</a>
+            </div>
+          </li>
+
+          <li>
+            <div class="img-about">
+              <a href="/html/exercise_machine_products.html"><img src="/img/avatar_5.jpg" alt=""></a>
+            </div>
+            <div class="text-img-about">
+              <a href="/html/exercise_machine_products.html">MÁY TẬP</a>
+            </div>
+          </li>
+
+          <li>
+            <div class="img-about">
+              <a href="/html/protection_belt_products.html"><img src="/img/avatar_6.jpg" alt=""></a>
+            </div>
+            <div class="text-img-about">
+              <a href="/html/protection_belt_products.html">ĐAI BẢO VỆ</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="product" id="product">
+      <div class="text">
+        <h1>VỀ SẢN PHẨM</h1>
+        <P>Các sản phẩm đang được bán chạy</P>
+      </div>
+        <div class="list">
+          <div class="item" data-key="1">
+            <div class="img">
+                <img src="/img/tools_1.jpg" alt="">
+            </div>
+            <div class="content">
+                <div class="title">
+                  LightSaber AI massage gun, Muscle relaxation massage gun, smart AI therapy technology</div>
+                <div class="price">2.200.000₫</div>
+                <input type="number" class="count" min="1" value="1">
+                <button class="add"style="color: #ffffff;"><i class="fa-solid fa-cart-plus" style="color: #ffffff;"></i> Oder now</button>
+                <button class="remove" onclick="Remove(1)"><i class="fa-solid fa-trash-can"></i></button>
+            </div>
+        </div>
+  
+        <div class="item" data-key="2">
+            <div class="img">
+                <img src="/img/tools_2.png" alt="">
+            </div>
+            <div class="content">
+                <div class="title">Abdominal Roller - 1 Cake</div>
+                <div class="price">550.000₫</div>
+                <input type="number" class="count" min="1" value="1">
+                <button class="add"style="color: #ffffff;"><i class="fa-solid fa-cart-plus" style="color: #ffffff;"></i> Oder now</button>
+                <button class="remove" onclick="Remove(2)"><i class="fa-solid fa-trash-can"></i></button>
+            </div>
+        </div>
+  
+        <div class="item" data-key="3">
+            <div class="img">
+                <img src="/img/tools_3.png" alt="">
+            </div>
+            <div class="content">
+                <div class="title">Barpad CGK-307 weight bearing foam</div>
+                <div class="price">49.000₫</div>
+                <input type="number" class="count" min="1" value="1">
+                <button class="add"style="color: #ffffff;"><i class="fa-solid fa-cart-plus" style="color: #ffffff;"></i> Oder now</button>
+                <button class="remove" onclick="Remove(3)"><i class="fa-solid fa-trash-can"></i></button>
+            </div>
+        </div>
+  
+        <div class="item" data-key="4">
+            <div class="img">
+                <img src="/img/tools_4.png" alt="">
+            </div>
+            <div class="content">
+                <div class="title">Stainless steel thermos flask 500-700ml Thickness Good Heat Retention Type Ri Solider</div>
+                <div class="price">450.000₫</div>
+                <input type="number" class="count" min="1" value="1">
+                <button class="add"style="color: #ffffff;"><i class="fa-solid fa-cart-plus" style="color: #ffffff;"></i> Oder now</button>
+                <button class="remove" onclick="Remove(4)"><i class="fa-solid fa-trash-can"></i></button>
+            </div>
+        </div>
+          <div class="item" data-key="5">
+              <div class="img">
+                  <img src="/img/tools_5.jpg" alt="">
+              </div>
+              <div class="content">
+                  <div class="title">Customizable door-mounted wall pull-up bar from 62-150cm</div>
+                  <div class="price">390.000₫</div>
+                  <input type="number" class="count" min="1" value="1">
+                  <button class="add"style="color: #ffffff;"><i class="fa-solid fa-cart-plus" style="color: #ffffff;"></i> Oder now</button>
+                  <button class="remove" onclick="Remove(5)"><i class="fa-solid fa-trash-can"></i></button>
+              </div>
+          </div>
+  
+          <div class="item" data-key="6">
+              <div class="img">
+                  <img src="/img/tools_6.jpg" alt="">
+              </div>
+              <div class="content">
+                  <div class="title">Tool to support abdominal GYM exercise at home simple and effective</div>
+                  <div class="price">400.000₫</div>
+                  <input type="number" class="count" min="1" value="1">
+                  <button class="add"style="color: #ffffff;"><i class="fa-solid fa-cart-plus" style="color: #ffffff;"></i> Oder now</button>
+                  <button class="remove" onclick="Remove(6)"><i class="fa-solid fa-trash-can"></i></button>
+              </div>
+          </div>
+  
+          <div class="item" data-key="7">
+              <div class="img">
+                  <img src="/img/tools_7.jpg" alt="">
+              </div>
+              <div class="content">
+                  <div class="title">Set of 5 Strength Training Zippers - Set of 5 high-class bodybuilding resistance training bands for men and women</div>
+                  <div class="price">100.000₫</div>
+                  <input type="number" class="count" min="1" value="1">
+                  <button class="add"style="color: #ffffff;"><i class="fa-solid fa-cart-plus" style="color: #ffffff;"></i> Oder now</button>
+                  <button class="remove" onclick="Remove(7)"><i class="fa-solid fa-trash-can"></i></button>
+              </div>
+          </div>
+  
+          <div class="item" data-key="8">
+              <div class="img">
+                  <img src="/img/tools_8.jpg" alt="">
+              </div>
+              <div class="content">
+                  <div class="title">High-grade Rubber Coated Cable Cores Gym Fitness Sports Gymnastics Cable</div>
+                  <div class="price">200.000₫</div>
+                  <input type="number" class="count" min="1" value="1">
+                  <button class="add"style="color: #ffffff;"><i class="fa-solid fa-cart-plus" style="color: #ffffff;"></i> Oder now</button>
+                  <button class="remove" onclick="Remove(8)"><i class="fa-solid fa-trash-can"></i></button>
+              </div>
+          </div>
+      </div>
+    </div>
+    <script>
+      let list = document.querySelectorAll('.list .item');
+list.forEach(item => {
+  item.addEventListener('click', function(event){
+      if(event.target.classList.contains('add')){
+          var itemNew = item.cloneNode(true);
+          let checkIsset  = false;
+
+          let listCart = document.querySelectorAll('.cart .item');
+          listCart.forEach(cart =>{
+              if(cart.getAttribute('data-key') == itemNew.getAttribute('data-key')){
+                  checkIsset = true;
+                  cart.classList.add('danger');
+                  setTimeout(function(){
+                      cart.classList.remove('danger');
+                  },1000)
+              }
+          })
+          if(checkIsset == false){
+              document.querySelector('.listCart').appendChild(itemNew);
+          }
+
+      }
+  })
+})
+function Remove($key){
+    let listCart = document.querySelectorAll('.cart .item');
+    listCart.forEach(item => {
+        if(item.getAttribute('data-key') == $key){
+            item.remove();
+            return;
+        }
+    })
+}
+    </script>
+            <div class="float-ck" style="left: 0px" >
+
+              <div id="hide_float_left">
+    
+          <a href="javascript:hide_float_left()">Tắt Quảng Cáo [X]</a></div>
+    
+          <div id="float_content_left">
+    
+          <!-- Start quang cao-->
+    
+              <a href="#" taget="_blank" ><img alt="Quảng cáo trên GymStore.com" src="/img/qc.png"/></a>
+    
+          <!-- End quang cao -->
+          </div>
+          </div> 
+          <script type="text/javascript">
+            function hide_float_left() {
+                var content = document.getElementById('float_content_left');
+                var hide = document.getElementById('hide_float_left');
+                if (content.style.display == "none")
+                {content.style.display = "block"; hide.innerHTML = '<a href="javascript:hide_float_left()">Tắt quảng cáo [X]</a>'; }
+                    else { content.style.display = "none"; hide.innerHTML = '<a href="javascript:hide_float_left()">Xem quảng cáo...</a>';
+                }
+                }
+            </script>
+              <div title="Về đầu trang" id="top-up">
+                <i class="fas fa-arrow-circle-up"></i></div>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+                <script>
+                  // kéo xuống khoảng cách 500px thì xuất hiện nút Top-up
+                  var offset = 500;
+                  // thời gian di trượt 0.75s ( 1000 = 1s )
+                  var duration = 750;
+                  $(function(){
+                  $(window).scroll(function () {
+                  if ($(this).scrollTop() > offset)
+                  $('#top-up').fadeIn(duration);else
+                  $('#top-up').fadeOut(duration);
+                  });
+                  $('#top-up').click(function () {
+                  $('body,html').animate({scrollTop: 0}, duration);
+                  });
+                  });
+                  </script>
+      <div class="contact" id="contact">
+        <div class="text">
+          <h1>CONTACT</h1>
+          <P>Đăng ký sớm để nhận được ưu đãi khác</P>
+        </div>
+        <div class="content">
+          <input type="text" placeholder="Họ và tên">
+          <input type="text" placeholder="Email">
+          <input type="text" placeholder="Số điện thoại">
+          <input type="text" placeholder="Địa chỉ">
+          <button>ĐĂNG KÝ</button>
+        </div>
+      </div>
+      <hr>
+      <div class="info" id="info">
+        <div class="text">
+          <ul>
+            <li><h4 style="color:#454545;">CHÍNH SÁCH CHUNG</h4><br></li>
+            <li><a style="color:#454545;">Chính sách, quy định chung</a><br></li>
+            <li><a style="color:#454545;">Chính sách đổi trả và hoàn tiền</a><br></li>
+            <li><a style="color:#454545">Chính sách vận chuyển hàng</a></li>
+            <li><a style="color:#454545">Bảo mật thông tin khách hàng</a></li>
+            <li><a style="color:#454545">Chính sách chính hãng</a></li>
+          </ul>
+
+          <ul>
+            <li><h4 style="color:#454545;">HỖ TRỢ KHÁCH HÀNG</h4><br></li>
+            <li><a style="color:#454545;">Hướng dẫn thanh toán</a><br></li>
+            <li><a style="color:#454545;">Hướng dẫn mua hàng Online</a><br></li>
+            <li><a style="color:#454545;">Hướng dẫn mua hàng trả góp</a><br></li>
+            <li><a style="color:#454545">Góp ý, Khiếu Nại</a></li>
+          </ul>
+
+          <ul>
+            <li><h4 style="color:#454545;">© GIỚI THIỆU Về GYMSTORE24</h4><br></li>
+            <li><a style="color:#454545;">Hợp tác cùng công ty SBS & CAFE24</a><br></li>
+            <li><a style="color:#454545;">Liên hệ: 0338547501</a><br></li>
+            <li><a style="color:#454545">Email: thong208585@gmail.com</a></li>
+            <li><a style="color:#454545;">Địa chỉ: 90 Đường 30 Tháng 4, Bình An, Dĩ An, Bình Dương, Vietnam.</a><br></li>
+          </ul>
+        </div>
+      </div>
+      <hr>
+      <div class="footer" id="footer">
+        <div class="text">
+          <h4 style="color:#ffffff;">© Bản quyền thuộc về GYMSTORE24</h4>
+          <p style="color:#ffffff;">Những sản phẩm đăng trên website này không phải là thuốc, không có tác dụng thay thế thuốc chữa bệnh.
+            Hình ảnh và Nutrition Facts của sản phẩm chỉ mang tính chất tham khảo bởi thành phần, mẫu mã nhà sản xuất có thể thay đổi bất cứ lúc nào mà
+            Gymstore24 chưa thể cập nhật ngay lập tức.</p>
+        </div>
+        <div class="logo">
+          <img src="/img/logo1.png" alt="">
+        </div>
+      </div>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regsiter</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/css/style.css'>
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+    <link rel="stylesheet"
+    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@1,700&family=Roboto+Mono:wght@100;500;600;700&family=Sigmar&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <a href="/html/index.html">
+        <img src="/img/logo1.png">
+      </a>
+    </div>
+
+    <ul class="navbar">
+      <li><a href="/html/index.html" class="active">Home</a></li>
+      <li><a href="/html/clothing_products.html">Product</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="h-icon">
+      <button id="shop">
+        <i class='bx bx-shopping-bag' ></i>
+      </button>
+      <div id="myCart" class="cart">
+        <div class="cart-content">
+          <div class="cart-header">
+            <h2 class=".name">Giỏ Hàng</h2>
+            <span class="close">&times;</span>
+          </div>
+          <div class="listCart">
+
+          </div>
+          <div class="cart-footer">
+            <button type="button" class="btn btn-secondary close-footer">Đóng</button>
+            <button type="button" class="btn btn-primary order">Thanh Toán</button>
+          </div>
+        </div>
+      </div>
+      <a href="/html/login.html"><i class='bx bx-user'></i></a>
+      <div class="bx bx-menu" id="menu-icon"></div>
+    </div>
+    <script type="text/javascript">
+      let menu = document.querySelector('#menu-icon');
+      let navbar = document.querySelector('.navbar');
+
+      menu.onclick = () => {
+        menu.classList.toggle('bx-x');
+        navbar.classList.toggle('active');
+      };
+
+      window.onscroll = () =>{
+        menu.classList.remove('bx-x');
+        navbar.classList.remove('active');
+      }
+    </script>
+                <script type="text/javascript">
+                  // Modal
+                  var cart = document.getElementById("myCart");
+                  var btn = document.getElementById("shop");
+                  var close = document.getElementsByClassName("close")[0];
+                  // tại sao lại có [0] như  thế này bởi vì mỗi close là một html colection nên khi mình muốn lấy giá trị html thì phải thêm [0]. 
+                  // Nếu mình có 2 cái component cùng class thì khi [0] nó sẽ hiển thị component 1 còn [1] thì nó sẽ hiển thị component 2.
+                  var close_footer = document.getElementsByClassName("close-footer")[0];
+                  var order = document.getElementsByClassName("order")[0];
+                  btn.onclick = function () {
+                    cart.style.display = "block";
+                  }
+                  close.onclick = function () {
+                    cart.style.display = "none";
+                  }
+                  close_footer.onclick = function () {
+                    cart.style.display = "none";
+                  }
+                  order.onclick = function () {
+                    alert("Cảm ơn bạn đã thanh toán đơn hàng")
+                  }
+                  window.onclick = function (event) {
+                    if (event.target == cart) {
+                      cart.style.display = "none";
+                    }
+                  }
+                </script>
+      <script type="text/javascript">
+        $('section').each(function(){
+          
+          let top = $(window).scrollTop();
+          let height = $(this).height();
+          let offset = $(this).offset();
+          let id = $(this).attr('id');
+          
+          if(top >= offset && top < offset + height){
+            $('.navbar ul li a ').removeClass('active');
+            $('.navbar').find(`[href="#${id}"]`).addClass('active');
+          }
+        })
+      </script>
+  </header>
+    <form action="register.html">
+        <div class="signup">
+            <h1>Register</h1>
+            <p>Please fill in this form to create an account.</p>
+            <hr>
+        
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email" id="email" required>
+            <label for="email"><b>Username</b></label>
+            <input type="text" placeholder="Username" name="us" id="user" required>
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+        
+            <label for="psw-repeat"><b>Repeat Password</b></label>
+            <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
+            <hr>
+            <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+        
+            <button type="submit" class="signup-btn">Register</button>
+          </div>
+        </div>
+    </form>
+    <script>
+        function myFunction() {
+          var x = document.getElementById("myTopnav");
+          if (x.className === "topnav") {
+            x.className += " responsive";
+          } else {
+            x.className = "topnav";
+          }
+        }
+        </script>
+      <div class="footer" id="footer">
+        <div class="text">
+          <h4 style="color:#ffffff;">© Bản quyền thuộc về GYMSTORE24</h4>
+          <p style="color:#ffffff;">Những sản phẩm đăng trên website này không phải là thuốc, không có tác dụng thay thế thuốc chữa bệnh.
+            Hình ảnh và Nutrition Facts của sản phẩm chỉ mang tính chất tham khảo bởi thành phần, mẫu mã nhà sản xuất có thể thay đổi bất cứ lúc nào mà
+            Gymstore24 chưa thể cập nhật ngay lập tức.</p>
+        </div>
+        <div class="logo">
+          <img src="/img/logo1.png" alt="">
+        </div>
+      </div>
+</body>
+</html>
